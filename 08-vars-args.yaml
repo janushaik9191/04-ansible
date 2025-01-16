@@ -4,3 +4,7 @@
   - name: print the information
     ansible.builtin.debug:
       msg: "Hii {{NAME}}, Good {{GREETING}}"
+
+# usage: to pass variables as command line arges need to specifiy "-e" or "--extar-vars"
+
+# ansible-playbook -i inventory.ini -e "NAME=meerjan GREETING=morning" 
