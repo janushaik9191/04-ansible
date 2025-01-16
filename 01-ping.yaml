@@ -3,3 +3,4 @@
   tasks:
   - name: ping the ansible server
     ansible.builtin.ping:
+      msg: "ansible server is successfully ping the ansible node"
