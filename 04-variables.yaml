@@ -1,6 +1,5 @@
-- name: variables from play and level
+- name: variables from play and task level
   hosts: web
-  become: yes
   vars: # variables from play level
     COURSE: "Devops with Aws"
     DURATION: "120hrs"
