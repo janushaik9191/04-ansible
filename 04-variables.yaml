@@ -1,4 +1,4 @@
-- name: print the course information again
+- name: variables from play and level
   hosts: web
   become: yes
   vars: # variables from play level
