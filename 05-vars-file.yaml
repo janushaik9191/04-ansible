@@ -5,4 +5,4 @@
   tasks:
   - name: print the varaibles from files
     ansible.builtin.debug:
-      msg: "Hi iam learning {{ COURSE }}, with the duration {{ DURATION }}, by the trainer {{ TARINER }}
+      msg: "Hi iam learning {{ COURSE }}, with the duration {{ DURATION }}, by the trainer {{ TARINER }}"
