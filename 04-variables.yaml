@@ -1,18 +1,20 @@
-- name: variables from play level
+- name: print the course information again
   hosts: web
   become: yes
   vars: # variables from play level
-    course: "devops with aws"
-    duration: 120hrs
-    trainer: shivakumar reddy
+    COURSE: "Devops with Aws"
+    DURATION: "120hrs"
+    TRAINER: "shivakumar reddy"
   tasks:
   - name: print the course information
     ansible.builtin.debug:
-      msg: "hi iam learing {{ course}}, with duration {{ duration }}, by the trainer {{ trainer}}"
-  
+      msg: "Hi iam learning {{ COURSE }}, with duration {{ DURATION }}, by the trainer {{ TRAINER }}"
+
   - name: print the course information again
-    vars:
-      course: "ansible"
+    vars: # variables from task level 
+      COURSE: "Ansible"
     ansible.builtin.debug:
-      msg: "hi iam learing {{ course}}, with duration {{ duration }}, by the trainer {{ trainer}}"
+      msg: "Hi iam learning {{ COURSE }}, with duration {{ DURATION }}, by the trainer {{ TRAINER }}"
+
+# play level variables can be overidden by the task level variabels
   
