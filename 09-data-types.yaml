@@ -1,0 +1,25 @@
+- name: all data types in a single playbook
+  hosts: web
+  vars:
+    course: "devops with aws" # string data type
+    duration: 120 # number 
+    live: true # boolean
+    topics: # list
+    - linux
+    - shell
+    - ansible
+    - terraform
+    - git
+    - docker
+    - kubernetes
+    tools: # map/dictionary
+      ci: jenkins
+      cm: ansible
+      cloud: aws
+      aws: # list inside map
+      - iam
+      - s3
+    tasks:
+    - name: print the information
+      ansible.builtin.debug:
+        msg: "Hi iam learing {{course}},duration : {{duration}},live : {{live}},topics : {{topics}}, tools : {{tools}}"
