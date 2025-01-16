@@ -19,7 +19,7 @@
       aws: # list inside map
       - iam
       - s3
-    tasks:
-    - name: print the information
-      ansible.builtin.debug:
-        msg: "Hi iam learing {{course}},duration : {{duration}},live : {{live}},topics : {{topics}}, tools : {{tools}}"
+  tasks:
+  - name: print the information
+    ansible.builtin.debug:
+      msg: "Hi iam learing {{course}},duration : {{duration}},live : {{live}},topics : {{topics}}, tools : {{tools}}"
