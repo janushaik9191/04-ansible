@@ -1,7 +1,7 @@
 - name: variables from play level
   hosts: web
   become: yes
-  vars:
+  vars: # variables from play level
     course: "devops with aws"
     duration: 120hrs
     trainer: shivakumar reddy
@@ -9,3 +9,10 @@
   - name: print the course information
     ansible.builtin.debug:
       msg: "hi iam learing {{ course}}, with duration {{ duration }}, by the trainer {{ trainer}}"
+  
+  - name: print the course information again
+    vars:
+      course: "ansible"
+    ansible.builtin.debug:
+      msg: "hi iam learing {{ course}}, with duration {{ duration }}, by the trainer {{ trainer}}"
+  
