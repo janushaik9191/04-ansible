@@ -4,7 +4,7 @@
   vars_prompt:
   - name: my_number # prompt consider given number by default as string
     prompt: please enter the number
-    private: true
+    private: false  # by default it was true
   tasks:
   - name: print this is number is less then less
     ansible.builtin.debug:
@@ -14,4 +14,4 @@
   - name: print this number is greater then 10
     ansible.builtin.debug:
       msg: "given number is greater then 10"
-    when: my_number | int > 10  
+    when: my_number | int > 10  # string value to be consider as number by pipe and int 
