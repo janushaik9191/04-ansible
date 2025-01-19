@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    vpc_subnet_id: vpc-053fda7bc9606768e
+    vpc_subnet_id: subnet-0d379f052e48ae9e0
     instance_type: t3.micro
     security_group: sg-0d0488aad8797fa18
     image_id: ami-09c813fb71547fc4f
