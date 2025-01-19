@@ -19,4 +19,4 @@
     - mysql
     - backend
     - frontend
-    register: ec2-instances
+    register: ec2_instances
