@@ -10,6 +10,10 @@
     ansible.builtin.shell: ps -ef | grep ssh
     register: output
 
+  - name: print the info
+    ansible.builtin.debug:
+      msg: "the shell info is: {{ output }}"
+      
   - name: check the process
     ansible.builtin.command: ps -ef | grep ssh
     register: output
