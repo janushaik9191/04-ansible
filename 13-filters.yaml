@@ -2,8 +2,8 @@
   hosts: local
   connection: local
   tasks:
-    - name: convert the string to upper case
-      vars:
-        greeting: "hello ramesh"
-      ansible.builtin.debug:
+  - name: convert the string to upper case
+    vars:
+      greeting: "hello ramesh"
+    ansible.builtin.debug:
       msg: "{{ greeting | upper }}"
