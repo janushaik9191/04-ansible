@@ -4,5 +4,9 @@
   tasks:
   - name: check weather the user is exist
     ansible.builtin.command: id user
-    rigister: USER
+    register: USER
     ignore_errors: true
+
+  - name: print thr user info
+    ansible.builtin.debug:
+      msg: "user info is : {{ USER }}"
