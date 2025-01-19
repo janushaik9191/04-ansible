@@ -1,16 +1,16 @@
-- name: create user if not exist based on condition
-  hosts: local
-  connection: local
+- name: create user
+  hosts: web
+  become: yes
   tasks:
-  - name: check weather the user is exist
-    ansible.builtin.command: id user
+  - name: check user is exist or not
+    ansible.builtin.command: id expense
     register: USER
-    ignore_errors: true
+    ignore_errors: True
 
-  - name: print thr user info
+  - name: print the user info
     ansible.builtin.debug:
-      msg: "user info is : {{ USER }}"
+      msg: "user info :: {{ USER }}"
 
   - name: create user if not exist
     ansible.builtin.command: useradd expense
-    when : USER.rc != 0
+    when: USER.rc != 0
