@@ -1,12 +1,17 @@
-- name: finding the given number is greater or less
+- name: to check the given number is less or greater 
   hosts: local
   connection: local
   vars_prompt:
-  - name: my_number
+  - name: my_number # prompt consider given number by default as string
     prompt: please enter the number
-    private: false
+    private: true
   tasks:
-  - name: given number is less then 150
+  - name: print this is number is less then less
     ansible.builtin.debug:
-      msg: given number is less then 150  
-    when: my_number | int < 150 
+      msg: "given number {{ my_number }} is less then 10"
+    when: my_number | int < 10
+
+  - name: print this number is greater then 10
+    ansible.builtin.debug:
+      msg: "given number is greater then 10"
+    when: my_number | int > 10  
