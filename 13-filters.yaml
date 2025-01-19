@@ -19,11 +19,13 @@
       numbers: [1,2,3,5,4,5,4,8,6,7,4,6,9,2]
     ansible.builtin.debug:
       msg: "{{ numbers | min }},{{ numbers | max }}"
+
   - name: print the unique value
     vars:
       numbers: [1,2,3,5,4,5,4,8,6,7,4,6,9,2]
     ansible.builtin.debug:
       msg : "{{ numbers | unique }}"
+
   - name: convert map to list 
     vars:
       course:
@@ -32,3 +34,11 @@
         trainer: "shivakumar"
     ansible.builtin.debug:
       msg: "{{ course | dict2items }}"
+
+  - name: convert list to map
+    course:
+    - { "key": "name","value": "devops with aws"},
+    - {"key": "duration","value": 120},
+    - {"key": "trainer","value": "shivakumar"}
+    ansible.builtin.debug:
+      msg: "{{ course | items2dict }}"
