@@ -3,13 +3,13 @@
   connection: local
   become: yes
   tasks:
-    - name: install nginx server
+    - name: install nginx server on RedHat
       ansible.builtin.dnf:
         name: nginx
         state: present
       when: ansible_os_family == "RedHat"
 
-    - name: install nginx server
+    - name: install nginx server Debian/Ubuntu
       ansible.builtin.apt:
         name: nginx
         state: present
