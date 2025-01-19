@@ -12,3 +12,6 @@
 
   - name: using command
     ansible.builtin.command: ps -ef | grep ssh
+
+  - name: using shell
+    ansible.builtin.shell: ps -ef | grep ssh
