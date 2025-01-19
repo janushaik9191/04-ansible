@@ -16,6 +16,11 @@
     
   - name: print the minimum and maximum values
     vars:
-      number: "[1,2,3,5,4,5,4,8,6,7,4,6,9,2]"
+      numbers: "[1,2,3,5,4,5,4,8,6,7,4,6,9,2]"
     ansible.builtin.debug:
-      msg: "{{ number | min }} {{ number | max }}"
+      msg: "{{ numbers | min }},{{ numbers | max }}"
+  - name: print the unique value
+    vars:
+      numbers: "[1,2,3,5,4,5,4,8,6,7,4,6,9,2]"
+    ansible.builtin.debug:
+      msg : "{{ numbers | unique }}"
