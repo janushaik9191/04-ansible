@@ -2,30 +2,35 @@
   hosts: local
   connection: local
   tasks:
+  # converting string into upper case
   - name: convert the string to upper case
     vars:
       greeting: "hello ramesh"
     ansible.builtin.debug:
       msg: "{{ greeting | upper }}"
 
+  # converting string into lower case
   - name: convert the string into lower case
     vars:
       greeting: "HELLO RAMESH"
     ansible.builtin.debug:
       msg: "{{ greeting | lower }}"
-    
+
+  # print the min and max values    
   - name: print the minimum and maximum values
     vars:
       numbers: [1,2,3,5,4,5,4,8,6,7,4,6,9,2]
     ansible.builtin.debug:
       msg: "{{ numbers | min }},{{ numbers | max }}"
 
+  # print the unique value
   - name: print the unique value
     vars:
       numbers: [1,2,3,5,4,5,4,8,6,7,4,6,9,2]
     ansible.builtin.debug:
       msg : "{{ numbers | unique }}"
 
+  # covert map to list
   - name: convert map to list 
     vars:
       course:
@@ -35,6 +40,7 @@
     ansible.builtin.debug:
       msg: "{{ course | dict2items }}"
 
+  # convert list to map
   - name: convert list to map
     vars:
       course:
@@ -44,6 +50,7 @@
     ansible.builtin.debug:
       msg: "{{ course | items2dict }}"
 
+  # check ip address is valid or not
   - name: check ip address
     vars:
       my_ip: "255.255.122.65"
