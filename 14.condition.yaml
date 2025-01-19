@@ -1,0 +1,12 @@
+- name: finding the given number is greater or less
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: my_number
+    prompt: please enter the number
+    private: false
+  tasks:
+  - name: given number is less then 150
+    ansible.builtin.debug:
+      msg: given number is less then 150  
+    when: my_number | int < 150 
