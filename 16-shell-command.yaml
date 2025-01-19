@@ -1,17 +1,15 @@
-- name: shell vs command
+- name: command vs shell
   hosts: local
   connection: local
   tasks:
-  - name: using command
-    ansible.builtin.command: ls -ltr > /tmp/output.txt
-    ignore_errors: True
+  - name: execute the command
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt # login to the server and execute command inside
+    # command module, just issues the command
 
-  - name: execute by shell
-    ansible.builtin.shell: ls -ltr > /tmp/output.txt
-      # msg: "output by executing shell"
-
-  - name: using command
-    ansible.builtin.command: ps -ef | grep ssh
-
-  - name: using shell
+  - name: check the process
     ansible.builtin.shell: ps -ef | grep ssh
+    register: output
+
+  - name: check the process
+    ansible.builtin.command: ps -ef | grep ssh
+    register: output
