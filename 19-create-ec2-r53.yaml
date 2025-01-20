@@ -3,7 +3,7 @@
   connection: local
   vars:
     subnet_id: "subnet-01201808a891273e0"
-    sg_id: "sg-070103aea9684415b"
+    sg_id: "sg-0d0488aad8797fa18"
     ami_id: "ami-09c813fb71547fc4f"
     zone: meerjan.online
   tasks:
