@@ -12,7 +12,7 @@
     amazon.aws.ec2_instance:
       name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
-      sg_id: "{{ sg_id }}"
+      security_group: "{{ sg_id }}"
       ami_id: "{{ ami_id }}"
       instance_type: "{{ instance_type }}"
     loop:
