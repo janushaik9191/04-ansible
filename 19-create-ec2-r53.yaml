@@ -1,25 +1,22 @@
-- name: creating ec2 instances and r53 records
+- name: create ec2 instances and r53 records
   hosts: local
   connection: local
   vars:
-    subnet_id: "subnet-01201808a891273e0"
+    subnet_id: "subnet-0d379f052e48ae9e0"
     sg_id: "sg-0d0488aad8797fa18"
     ami_id: "ami-09c813fb71547fc4f"
     zone: meerjan.online
+    instance_type: "t3.micro"
   tasks:
-  - name: creating ec2 instances
+  - name: creting ec2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: t3.micro
-      security_group: "{{ sg_id }}"
-      image_id: "{{ ami_id }}"
+      vpc_subnet_id: "{{ subnet_id}}"
+      sg_id: "{{ sg_id }}"
+      ami_id: "{{ ami_id }}"
+      instance_type: "{{ instance_type }}"
     loop:
     - mysql
     - backend
     - frontend
-    register: ec2_instances
-
-  - name: print the output
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"
+    register: "ec2_instances"
