@@ -1,9 +1,7 @@
-# ansible dynamic inventory
 plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1
 filters:
-  # This selects only running instances with tag `Nmae` tag set to `nginx`.
   tag:Name: nginx
   instance-state-name : running
 hostnames:
